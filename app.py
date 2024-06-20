@@ -16,9 +16,12 @@ def main():
     torch.save(model.state_dict(), 'model/loan_approval_model.pth')
     torch.save(scaler, 'model/scaler.pth')
 
+    # Feature names for SHAP explanations
+    feature_names = data.drop('loan_status', axis=1).columns.tolist()
+    
     # Explain a decision for the first instance
     instance_idx = 0
-    explanation = explain_decision(model, data.drop('loan_status', axis=1), instance_idx, scaler)
+    explanation = explain_decision(model, data.drop('loan_status', axis=1), instance_idx, scaler, feature_names)
     print(explanation)
 
 if __name__ == "__main__":
