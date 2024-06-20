@@ -100,7 +100,7 @@ python app.py
 
 
 ## Project Structrue
-
+```bash
 loan-approval-model/
 │
 ├── data/                     # Directory for the dataset
@@ -121,5 +121,5 @@ loan-approval-model/
 ├── app.py                    # Main application script
 ├── requirements.txt          # List of required packages
 └── README.md                 # Project README
-
+```
 
