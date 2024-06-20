@@ -3,7 +3,8 @@
 import pandas as pd
 from sklearn.metrics import classification_report
 import torch
-from model_training import LoanApprovalModel, preprocess_data
+from src.model_training import LoanApprovalModel
+from src.data_preprocessing import preprocess_data
 
 def audit_model(model, data, scaler):
     X = data.drop('loan_status', axis=1).values

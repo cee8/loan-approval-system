@@ -5,8 +5,8 @@ import torch.nn as nn
 import torch.optim as optim
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
+from src.data_preprocessing import preprocess_data
 import pandas as pd
-import numpy as np
 
 class LoanApprovalModel(nn.Module):
     def __init__(self, input_dim):
@@ -54,9 +54,8 @@ def train_model(data):
     return model, scaler
 
 if __name__ == "__main__":
-    data = pd.read_csv('../data/loan_data.csv')
-    preprocessed_data = preprocess_data('../data/loan_data.csv')
-    model, scaler = train_model(preprocessed_data)
+    data = preprocess_data('../data/loan_data.csv')
+    model, scaler = train_model(data)
     torch.save(model.state_dict(), '../model/loan_approval_model.pth')
     torch.save(scaler, '../model/scaler.pth')
 

@@ -3,8 +3,6 @@
 from src.data_preprocessing import preprocess_data
 from src.model_training import train_model
 from src.explain_decision import explain_decision
-from src.audit_system import audit_model
-import pandas as pd
 import torch
 
 def main():
@@ -22,9 +20,6 @@ def main():
     instance_idx = 0
     explanation = explain_decision(model, data.drop('loan_status', axis=1), instance_idx, scaler)
     print(explanation)
-
-    # Audit the model
-    audit_model(model, data, scaler)
 
 if __name__ == "__main__":
     main()

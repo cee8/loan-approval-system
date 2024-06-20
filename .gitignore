@@ -1,3 +1,9 @@
+shap_force_plot.html
+venv
+model/
+data/
+.DS_Store
+src/__pycache__/
 # Logs
 logs
 *.log

@@ -1,6 +1,7 @@
 pandas
-numpy
+numpy<2
 scikit-learn
 torch
 shap
-
+matplotlib
+ipython
