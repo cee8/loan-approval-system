@@ -11,6 +11,23 @@ This project aims to create a an example of a transparent and fair loan approval
 - **Explainable AI**: Utilizes SHAP to provide detailed explanations of model predictions, ensuring transparency.
 - **Regular Audits**: Monitors and audits model performance to detect and mitigate biases.
 
+
+## Example
+
+![Loan Example](pictures/LoanExample1.png)
+
+The SHAP force plot above provides a detailed explanation of the loan approval decision for a specific applicant. Here's what the model output and this plot reveal:
+
+1. **Base Value**:
+    - The base value of 0.6308 represents the average model output if no specific features of the applicant were considered. This is essentially the starting point for the model's decision.
+
+2. **Feature Contributions**:
+    - **Age (25)**: This feature significantly increases the loan approval probability, pushing the value from 0.6308 closer to the final prediction.
+    - **Credit Score (700)**: Similarly, a credit score of 700 positively impacts the approval decision, contributing to the increase from the base value.
+    - **Employment Length (5 years)**: This feature has a minor negative impact, slightly reducing the likelihood of loan approval.
+    - **Loan Amount ($15,000)**: The requested loan amount also contributes negatively, reducing the probability slightly.
+    - **Income ($50,000)**: The applicant's income has a minor negative impact, reducing the approval likelihood marginally.
+
 ## Setup Instructions
 
 ### Prerequisites
@@ -98,7 +115,11 @@ loan-approval-model/
 │   ├── model_training.py     # Script for training the model
 │   └── explain_decision.py   # Script for explaining model decisions
 │
+├── pictures/                 # Directory for images
+│   └── LoanExample1.png      # Example image of the SHAP force plot
+│
 ├── app.py                    # Main application script
 ├── requirements.txt          # List of required packages
 └── README.md                 # Project README
+
 
