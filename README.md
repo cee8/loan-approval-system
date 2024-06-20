@@ -1,4 +1,4 @@
-# Loan Approval Model
+# Loan Approval/Denial Metrics
 
 ## Project Description
 
